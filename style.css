@@ -1,0 +1,485 @@
+@font-face {
+    font-family: 'IRANYekan';
+    src: url('./iran-yekan.woff2/iranyekanwebregular.b95439c1.b95439c1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IRANYekan';
+    src: url('./iran-yekan.woff2/iranyekanwebbold.e298fdc6.e298fdc6.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IRANYekan', Tahoma, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+::selection {
+    color: rgb(193, 29, 29);
+}
+
+header {
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-size: 24px;
+    background-image: linear-gradient(rgb(125, 75, 18), rgba(108, 45, 16, 0.648));
+    position: fixed;
+    z-index: 10000;
+}
+
+.logo {
+    text-shadow: 0 0 10px rgb(233, 230, 227), 0 0 5px rgb(163, 84, 15);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    display: inline-flex;
+    gap: 30px;
+}
+
+nav a {
+    position: relative;
+    color: antiquewhite;
+    text-decoration-line: none;
+    transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a:active::after {
+    width: 100%;
+}
+
+.mini-buy-btn {
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: burlywood;
+    box-shadow: 0 0 15px rgb(180, 145, 104);
+    cursor: pointer;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile {
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: rgb(90, 59, 18);
+    box-shadow: 0 0 15px rgb(214, 201, 187);
+    color: aliceblue;
+    cursor: pointer;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+nav a:hover,
+nav a:active {
+    color: rgb(94, 30, 30);
+    text-shadow: 0 0 10px rgb(145, 19, 61);
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.mini-buy-btn:hover,
+.mini-buy-btn:active {
+    background-color: rgba(104, 0, 0, 0.788);
+    box-shadow: 0 0 20px rgb(214, 201, 187);
+    color: aliceblue;
+    transform: scale(1.06);
+}
+
+.profile:hover,
+.profile:active {
+    background-color: rgba(136, 4, 4, 0.68);
+    box-shadow: 0 0 20px rgb(218, 170, 114);
+    transform: scale(1.06);
+}
+
+.main-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 45px;
+}
+
+#home,
+#products,
+#contact {
+    scroll-margin-top: 90px;
+}
+
+.cafe-img img {
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+}
+
+.cafe-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(
+        to top,
+        rgba(60, 40, 20, 0.75) 0%,
+        rgba(60, 40, 20, 0.1) 55%,
+        transparent 80%
+    );
+    border-radius: 15px;
+}
+
+.title {
+    text-shadow: 0 0 10px rgb(62, 35, 2);
+}
+
+.explore-menu {
+    background-color: rgba(113, 55, 13, 0.8);
+    padding: 10px 20px;
+    color: bisque;
+    border-style: dotted;
+    border-radius: 25px;
+    border-color: rgb(75, 4, 4);
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgb(62, 36, 0);
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.explore-menu:hover {
+    background-color: rgba(172, 56, 91, 0.792);
+    font-weight: bold;
+    box-shadow: 0 0 16px rgb(255, 84, 84);
+    color: rgb(140, 0, 28);
+    transform: scale(1.06);
+}
+
+.cafe-info a {
+    color: rgb(87, 3, 3);
+    text-decoration: none;
+    font-size: 20px;
+    text-shadow: 0 0 10px rgb(86, 10, 10);
+    transition: color 0.25s ease, transform 0.25s ease;
+    display: inline-block;
+}
+
+.cafe-info a:hover {
+    color: rgb(27, 61, 37);
+    font-weight: bold;
+    transform: translateY(-3px);
+}
+
+.info-cards {
+    margin-top: 30px;
+    border-radius: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+    gap: 20px;
+    padding: 50px;
+    background-image: linear-gradient(270deg, rgba(89, 54, 37, 0.797), rgb(121, 82, 54), rgb(104, 89, 72));
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.card-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    position: relative;
+    border: double 5px rgb(83, 66, 66);
+    box-shadow: 0 0 20px white;
+    border-radius: 15px;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img {
+    transform: scale(1.08);
+}
+
+.card h3 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    text-shadow: 0 0 5px rgb(71, 71, 28), 0 0 10px white;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+    gap: 30px;
+}
+
+.item-img {
+    width: 330px;
+    height: 200px;
+    object-fit: cover;
+    margin-top: 40px;
+    border: double 3px rgb(92, 70, 60);
+    transition: transform 0.4s ease;
+}
+
+.each-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    border: dashed 5px whitesmoke;
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    background-image: linear-gradient(90deg, rgb(202, 163, 116), rgb(220, 199, 172));
+    box-shadow: 0 0 20px rgb(89, 34, 7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.each-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(89, 34, 7, 0.6);
+}
+
+.each-item:hover .item-img {
+    transform: scale(1.08);
+}
+
+.item-info {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.p-item-info {
+    font-size: 14px;
+}
+
+.price {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgb(180, 60, 30);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-top: auto;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.each-item:hover .price {
+    transform: scale(1.1);
+    background-color: rgb(210, 75, 35);
+}
+
+.footer {
+    margin-top: 150px;
+    background-image: linear-gradient(270deg, rgb(125, 75, 18), rgba(108, 45, 16, 0.648), rgb(156, 129, 117));
+    border-radius: 15px 15px 0 0;
+    padding: 60px 40px 0;
+    color: aliceblue;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-section {
+    transition: transform 0.3s ease;
+}
+
+.footer-section:hover {
+    transform: translateY(-5px);
+}
+
+.footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: bisque;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-section p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: rgba(255, 250, 240, 0.85);
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 13px;
+    color: rgba(255, 250, 240, 0.6);
+}
+
+
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        padding: 10px 16px;
+        gap: 10px;
+        font-size: 18px;
+    }
+
+    ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .main-header {
+        margin-top: 130px;
+    }
+
+    .cafe-img img {
+        height: 50vh;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+
+    .info-p {
+        font-size: 14px;
+    }
+
+    .info-cards {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .card-img {
+        height: auto;
+        aspect-ratio: 4 / 5;
+    }
+
+    .items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .item-img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3 / 2;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    header {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    ul {
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .mini-buy-btn,
+    .profile {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .main-header {
+        margin-top: 150px;
+    }
+
+    .cafe-img img {
+        height: 40vh;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .explore-menu {
+        font-size: 15px;
+        padding: 8px 16px;
+    }
+
+    .cafe-info a {
+        font-size: 16px;
+    }
+
+    .items {
+        grid-template-columns: 1fr;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .card-img {
+        aspect-ratio: 16 / 9;
+    }
+
+    .item-img {
+        aspect-ratio: 16 / 9;
+    }
+
+    .footer {
+        padding: 40px 20px 0;
+    }
+}
